@@ -1,0 +1,6 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_dtm_hr_empleados,access.dtm.hr.empleados,model_dtm_hr_empleados,base.group_user,1,1,1,1
+access_dtm_ano_laboral,access.dtm.ano.laboral,model_dtm_ano_laboral,base.group_user,1,1,1,1
+access_dtm_hr_personal,access.dtm.hr.personal,model_dtm_hr_personal,base.group_user,1,1,1,1
+access_dtm_hr_bajas,access.dtm.hr.bajas,model_dtm_hr_bajas,base.group_user,1,1,1,1
+

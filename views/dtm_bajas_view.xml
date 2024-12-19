@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id = "dtm_hr_bajas_accion" model="ir.actions.act_window">
+            <field name="name">Bajas</field>
+            <field name="res_model">dtm.hr.bajas</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="dtm_hr_bajas_tree" model="ir.ui.view">
+            <field name="name">dtm_hr_bajas_tree</field>
+            <field name="model">dtm.hr.bajas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+<!--                    <field name="asistencia"/>-->
+<!--                    <field name="falta"/>-->
+<!--                    <field name="retardo"/>-->
+<!--                    <field name="permiso"/>-->
+<!--                    <field name="vacaciones"/>-->
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="dtm_hr_bajas_form" model="ir.ui.view">
+            <field name="name">dtm_hr_bajas_form</field>
+            <field name="model">dtm.hr.bajas</field>
+            <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+<!--                        <field name="asistencia"/>-->
+<!--                        <field name="falta"/>-->
+<!--                        <field name="retardo"/>-->
+<!--                        <field name="permiso"/>-->
+<!--                        <field name="vacaciones"/>-->
+<!--                        <field name="periodo_inicio"/>-->
+<!--                        <field name="periodo_final"/>-->
+                    </group>
+                </sheet>
+            </form>
+            </field>
+        </record>
+<!--        <menuitem id="dtm_hr_bajas_menu"  action="dtm_hr_bajas_accion"/>-->
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <menuitem name="Recursos Humanos" id="menu_root_dtm_hr">
+        <menuitem id="dtm_ano_laboral_menu"  action="dtm_ano_laboral_accion"/>
+        <menuitem name="Personal" id="menu_root_dtm_personal">
+            <menuitem id="dtm_hr_empleados_menu"  action="dtm_hr_empleados_accion"/>
+            <menuitem id="dtm_hr_bajas_menu"  action="dtm_hr_bajas_accion"/>
+        </menuitem>
+     </menuitem>
+</odoo>

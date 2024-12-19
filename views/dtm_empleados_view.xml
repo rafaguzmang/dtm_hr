@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id = "dtm_hr_empleados_accion" model="ir.actions.act_window">
+            <field name="name">Altas</field>
+            <field name="res_model">dtm.hr.empleados</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="dtm_hr_empleados_tree" model="ir.ui.view">
+            <field name="name">dtm_hr_empleados_tree</field>
+            <field name="model">dtm.hr.empleados</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+<!--                    <field name="asistencia"/>-->
+<!--                    <field name="falta"/>-->
+<!--                    <field name="retardo"/>-->
+<!--                    <field name="permiso"/>-->
+<!--                    <field name="vacaciones"/>-->
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="dtm_hr_empleados_form" model="ir.ui.view">
+            <field name="name">dtm_hr_empleados_form</field>
+            <field name="model">dtm.hr.empleados</field>
+            <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+<!--                        <field name="asistencia"/>-->
+<!--                        <field name="falta"/>-->
+<!--                        <field name="retardo"/>-->
+<!--                        <field name="permiso"/>-->
+<!--                        <field name="vacaciones"/>-->
+<!--                        <field name="periodo_inicio"/>-->
+<!--                        <field name="periodo_final"/>-->
+                    </group>
+                </sheet>
+            </form>
+            </field>
+        </record>
+<!--        <menuitem id="dtm_hr_empleados_menu"  action="dtm_hr_empleados_accion"/>-->
+    </data>
+</odoo>
