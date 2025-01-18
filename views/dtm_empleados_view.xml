@@ -28,6 +28,11 @@
             <field name="model">dtm.hr.empleados</field>
             <field name="arch" type="xml">
             <form string="">
+                <header>
+                    <div style="display:flex;justify-content:flex-end">
+                        <button type="object" name="action_baja" string="Baja" icon="fa-frown-o" class="btn btn-danger"/>
+                    </div>
+                </header>
                 <sheet>
                     <group>
                         <field name="nombre"/>

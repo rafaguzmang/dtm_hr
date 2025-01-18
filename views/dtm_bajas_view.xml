@@ -28,6 +28,11 @@
             <field name="model">dtm.hr.bajas</field>
             <field name="arch" type="xml">
             <form string="">
+                 <header>
+                    <div >
+                        <button type="object" name="action_alta" string="Alta" icon="fa-smile-o" class="btn btn-success"/>
+                    </div>
+                </header>
                 <sheet>
                     <group>
                         <field name="nombre"/>
