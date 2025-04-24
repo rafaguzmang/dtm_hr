@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id = "dtm_rh_rotacion_accion" model="ir.actions.act_window">
+            <field name="name">Rotación</field>
+            <field name="res_model">dtm.rh.rotacion</field>
+            <field name="view_mode">tree,graph</field>
+        </record>
+
+        <record id="dtm_rh_rotacion_graph" model="ir.ui.view">
+            <field name="name">dtm_rh_rotacion_graph</field>
+            <field name="model">dtm.rh.rotacion</field>
+            <field name="arch" type="xml">
+                <graph string="Ausentismo" type="bar">
+                    <field name="mes" type="row" interval="month"/>
+                    <field name="empleados_fin" type="measure"/>
+                    <field name="porcentaje" type="measure" widget="percentage"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="dtm_rh_rotacion_tree" model="ir.ui.view">
+            <field name="name">dtm_rh_rotacion_tree</field>
+            <field name="model">dtm.rh.rotacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="no_month"/>
+                    <field name="mes_nombre"/>
+                    <field name="empleados_init"/>
+                    <field name="empleados_fin"/>
+                    <field name="porcentaje"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <menuitem id="dtm_rh_rotacion_menu" action="dtm_hr.dtm_rh_rotacion_accion"/>-->
+
+    </data>
+</odoo>

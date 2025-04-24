@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id = "dtm_rh_ausentismo_accion" model="ir.actions.act_window">
+            <field name="name">Ausentismo</field>
+            <field name="res_model">dtm.rh.ausentismo</field>
+            <field name="view_mode">tree,graph</field>
+        </record>
+
+        <record id="dtm_rh_ausentismo_graph" model="ir.ui.view">
+            <field name="name">dtm_rh_ausentismo_graph</field>
+            <field name="model">dtm.rh.ausentismo</field>
+            <field name="arch" type="xml">
+                <graph string="Ausentismo" type="bar">
+                    <field name="mes" type="row" interval="month"/>
+                    <field name="dias_laborados" type="measure"/>
+                    <field name="porcentaje" type="measure" widget="percentage"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="dtm_rh_ausentismo_tree" model="ir.ui.view">
+            <field name="name">dtm_rh_ausentismo_tree</field>
+            <field name="model">dtm.rh.ausentismo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="no_month"/>
+                    <field name="mes_nombre"/>
+                    <field name="dias_laborados"/>
+                    <field name="faltas"/>
+                    <field name="empleados"/>
+                    <field name="porcentaje"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <menuitem id="dtm_rh_ausentismo_menu" action="dtm_hr.dtm_rh_ausentismo_accion"/>-->
+
+    </data>
+</odoo>

@@ -1,3 +1,4 @@
+from Tools.scripts.dutree import store
 from odoo import fields, models, api
 from datetime import datetime,timedelta
 
@@ -30,7 +31,7 @@ class Laboral(models.Model):
 
     dia = fields.Integer(string='Día',default=obtener_dia,readonly=True)
     fecha = fields.Date(string='Fecha',default= obtener_fecha,readonly=True)
-    asistencias = fields.Integer(string='Asistencias',readonly=True,compute= '_compute_asistencia')
+    asistencias = fields.Integer(string='Asistencias',readonly=True,compute= '_compute_asistencia',store=True)
     faltas = fields.Integer(string='Faltas',readonly=True)
     permisos = fields.Integer(string='Permisos',readonly=True)
     vacaciones = fields.Integer(string='Vacaciones',readonly=True)

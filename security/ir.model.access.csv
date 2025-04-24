@@ -4,3 +4,7 @@ access_dtm_ano_laboral,access.dtm.ano.laboral,model_dtm_ano_laboral,base.group_u
 access_dtm_hr_personal,access.dtm.hr.personal,model_dtm_hr_personal,base.group_user,1,1,1,1
 access_dtm_hr_bajas,access.dtm.hr.bajas,model_dtm_hr_bajas,base.group_user,1,1,1,1
 
+access_dtm_rh_ausentismo,access.dtm.rh.ausentismo,model_dtm_rh_ausentismo,base.group_user,1,1,1,1
+access_dtm_rh_rotacion,access.dtm.rh.rotacion,model_dtm_rh_rotacion,base.group_user,1,1,1,1
+
+
