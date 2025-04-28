@@ -87,33 +87,37 @@ class Rotacion(models.Model):
                     " AND EXTRACT(YEAR FROM fecha) = " + datetime.today().strftime("%Y") + ";")
                 get_proceso = self.env.cr.fetchall()
                 mes = datetime.today()
-                personal_list = []
+                personal_list = {}
                 nombre_mes = ''
+                cont_dia = 1
                 if get_proceso:
                     # Se calcula los días laborados
                     for personal in get_proceso:
-                        personal_list.append(self.env['dtm.ano.laboral'].search([('fecha','=',personal[0])]).personal_id.mapped('nombre'))
+                        personal_list[cont_dia] = self.env['dtm.ano.laboral'].search([('fecha','=',personal[0])]).personal_id.mapped('nombre')
+                        cont_dia += 1
+                        # personal_list.append(self.env['dtm.ano.laboral'].search([('fecha','=',personal[0])]).personal_id.mapped('nombre'))
                         mes = personal[0]
                         nombre_mes = str(personal[0].strftime("%B")).capitalize()
                 # Si el mes existe lo actualiza si no lo crea
                 get_this = self.env['dtm.rh.rotacion'].search([('no_month', '=', month)])
-                empleados_init = len(personal_list[0]) if personal_list else 0
-                empleados_fin = len(personal_list[len(personal_list)-1]) if personal_list else 0
-                promedio_empleados = ((empleados_fin-empleados_init)/2) if ((empleados_fin-empleados_init)/2) else 1
+                # Se recolecta la lista de empleados del primer y último día
+                empleados_init = personal_list[1]
+                empleados_fin = personal_list[cont_dia-1]
+                # Se obtiene el Número promedio de empleados
+                promedio_empleados = ((len(empleados_fin)+len(empleados_init))/2)
                 bajas = 0
-                if personal_list:
-                    for empleado in personal_list[len(personal_list)-1]:
-                        if empleado not in personal_list[0]:
-                            print(empleado)
+                if empleados_init != empleados_fin:
+                    for empleado in empleados_init:
+                        if empleado not in empleados_fin:
                             bajas+=1
-
+                # print('bajas',bajas,(bajas*100)/promedio_empleados)
                 if get_this:
                     get_this.write({
                         'no_month': month,
                         'mes_nombre': nombre_mes,
                         'mes': mes,
-                        'empleados_init': empleados_init,
-                        'empleados_fin': empleados_fin,
+                        'empleados_init': len(empleados_init),
+                        'empleados_fin': len(empleados_fin),
                         'porcentaje':(bajas*100)/promedio_empleados,
                     })
                 else:
@@ -121,8 +125,8 @@ class Rotacion(models.Model):
                         'no_month': month,
                         'mes_nombre': nombre_mes,
                         'mes': mes,
-                        'empleados_init': empleados_init,
-                        'empleados_fin': empleados_fin,
-                        'porcentaje': (bajas*100)/((empleados_fin-empleados_init)/2),
+                        'empleados_init': len(empleados_init),
+                        'empleados_fin': len(empleados_fin),
+                        'porcentaje': (bajas*100)/promedio_empleados,
                     })
         return res
