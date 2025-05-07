@@ -25,14 +25,10 @@ class Exempleados(models.Model):
     _description = "Registro de bajas"
     _order = "nombre asc"
     _rec_name = "nombre"
-
-
-
     nombre = fields.Char(string='Nombre ')
     salida = fields.Date(string='Fecha de Baja')
 
 
-    # Botón para dar de alta al personal después de su bajadef action_baja(self):
     def action_alta(self):
         get_bajas = self.env['dtm.hr.empleados'].search([('nombre','=',self.nombre)])
         if not get_bajas:
