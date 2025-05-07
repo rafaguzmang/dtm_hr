@@ -4,20 +4,10 @@
         <record id = "dtm_rh_ausentismo_accion" model="ir.actions.act_window">
             <field name="name">Ausentismo</field>
             <field name="res_model">dtm.rh.ausentismo</field>
-            <field name="view_mode">tree,graph</field>
+            <field name="view_mode">tree</field>
         </record>
 
-        <record id="dtm_rh_ausentismo_graph" model="ir.ui.view">
-            <field name="name">dtm_rh_ausentismo_graph</field>
-            <field name="model">dtm.rh.ausentismo</field>
-            <field name="arch" type="xml">
-                <graph string="Ausentismo" type="bar">
-                    <field name="mes" type="row" interval="month"/>
-                    <field name="dias_laborados" type="measure"/>
-                    <field name="porcentaje" type="measure" widget="percentage"/>
-                </graph>
-            </field>
-        </record>
+
 
         <record id="dtm_rh_ausentismo_tree" model="ir.ui.view">
             <field name="name">dtm_rh_ausentismo_tree</field>

@@ -28,6 +28,7 @@
                     <field name="mes_nombre"/>
                     <field name="empleados_init"/>
                     <field name="empleados_fin"/>
+                    <field name="bajas"/>
                     <field name="porcentaje"/>
                 </tree>
             </field>

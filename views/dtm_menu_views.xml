@@ -6,9 +6,12 @@
             <menuitem id="dtm_hr_empleados_menu"  action="dtm_hr_empleados_accion"/>
             <menuitem id="dtm_hr_bajas_menu"  action="dtm_hr_bajas_accion"/>
         </menuitem>
-         <menuitem name="Indicadores" id = "menu_root_dtm_indicadores">
-            <menuitem id="dtm_rh_ausentismo_menu" action="dtm_hr.dtm_rh_ausentismo_accion"/>
-            <menuitem id="dtm_rh_rotacion_menu" action="dtm_hr.dtm_rh_rotacion_accion"/>
-         </menuitem>
+            <menuitem name="Indicadores" id = "menu_root_dtm_indicadores">
+                <menuitem id="dtm_rh_ausentismo_menu" action="dtm_hr.dtm_rh_ausentismo_accion"/>
+                <menuitem id="dtm_rh_rotacion_menu" action="dtm_hr.dtm_rh_rotacion_accion"/>
+            </menuitem>
+        <menuitem id="rh_indicador_menu" action="view_rh_indicador_action"/>
+        <menuitem id="dtm_hr_rotaciones_menu" action ="dtm_hr_rotacion_action"/>
+
      </menuitem>
 </odoo>

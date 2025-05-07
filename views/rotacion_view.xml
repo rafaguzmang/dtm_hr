@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="dtm_hr_rotacion_action" model="ir.actions.client">
+        <field name="name">Rotación</field>
+        <field name="tag">dtm_hr.rotacion</field>
+    </record>
+
+<!--    <menuitem id="dtm_hr_rotaciones_menu" action ="dtm_hr_rotacion_action"/>-->
+
+</odoo>

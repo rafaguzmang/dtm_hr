@@ -7,6 +7,7 @@ class Laboral(models.Model):
     _name = 'dtm.ano.laboral'
     _description = 'Modelo para llevar las asistencias de los días trabajados'
     _rec_name = "fecha"
+    _order = "dia desc"
     # Obtiene el nuveno día
     def obtener_dia(self):
         get_udia = self.env['dtm.ano.laboral'].search([],limit=1,order='dia desc')
